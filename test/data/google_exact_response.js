@@ -1,0 +1,79 @@
+export var exactResponse = {
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "200",
+               "short_name" : "200",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Kent Street",
+               "short_name" : "Kent St",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Byward Market - Parliament Hill",
+               "short_name" : "Byward Market - Parliament Hill",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Ottawa",
+               "short_name" : "Ottawa",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Ottawa Division",
+               "short_name" : "Ottawa Division",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Ontario",
+               "short_name" : "ON",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "K1R",
+               "short_name" : "K1R",
+               "types" : [ "postal_code", "postal_code_prefix" ]
+            }
+         ],
+         "formatted_address" : "200 Kent St, Ottawa, ON K1R, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 45.4173899,
+                  "lng" : -75.7010221
+               },
+               "southwest" : {
+                  "lat" : 45.4168641,
+                  "lng" : -75.70198839999999
+               }
+            },
+            "location" : {
+               "lat" : 45.417127,
+               "lng" : -75.70150529999999
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 45.4184759802915,
+                  "lng" : -75.70015626970849
+               },
+               "southwest" : {
+                  "lat" : 45.4157780197085,
+                  "lng" : -75.70285423029149
+               }
+            }
+         },
+         "place_id" : "ChIJy4vDdFMEzkwRFZjfTeGZZeg",
+         "types" : [ "premise" ]
+      }
+   ],
+   "status" : "OK"
+}
