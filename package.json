@@ -32,10 +32,11 @@
   },
   "homepage": "https://github.com/sleepycat/geox",
   "scripts": {
-    "prebuild": "standard",
+    "prebuild": "npm run lint",
     "build": "tsc",
+    "pretest": "npm run lint",
     "test": "mocha",
-    "lint": "standard"
+    "lint": "tslint index.ts test.ts"
   },
   "peerDependencies": {
     "isomorphic-fetch": "^2.2.1"
