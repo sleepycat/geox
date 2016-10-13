@@ -60,9 +60,9 @@ export async function geocodeExact(address: string, query = defaultQuery): Promi
 }
 
 export async function geocode (address: string, query = defaultQuery): Promise<GoogleResults> {
-  let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${ encodeURI(address) }&sensor=false`
-  let response = await fetch(url)
-  let json: GoogleResults = await response.json()
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${ encodeURI(address) }&sensor=false`
+  const response = await fetch(url)
+  const json: GoogleResults = await response.json()
   return graphql(
     resolver,
     query,
