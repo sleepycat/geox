@@ -1,0 +1,11 @@
+{
+  "name": "geox",
+  "dependencies": {},
+  "globalDependencies": {
+    "fetch-mock": "registry:dt/fetch-mock#5.0.0+20160829142453",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "node": "registry:dt/node#6.0.0+20161010101523",
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20161004182750",
+    "whatwg-streams": "registry:dt/whatwg-streams#0.0.0+20160829180742"
+  }
+}

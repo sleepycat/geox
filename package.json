@@ -11,13 +11,17 @@
   "license": "MIT",
   "dependencies": {
     "es6-promise": "^4.0.5",
+    "graphql": "^0.7.2",
     "graphql-anywhere": "^0.1.14",
     "graphql-tag": "^0.1.14",
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
     "fetch-mock": "^5.5.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
   },
   "repository": {
     "type": "git",
