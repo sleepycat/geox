@@ -75,3 +75,5 @@ export async function geocode (address, query = defaultQuery) {
   }
 }
 
+let geox = { geocode, geocodeExact }
+export default geox
