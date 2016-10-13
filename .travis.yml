@@ -4,3 +4,5 @@ node_js:
 notifications:
   email:
     - mike@korora.ca
+after_success:
+  - 'nyc report --reporter=text-lcov | coveralls'

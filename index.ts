@@ -59,17 +59,13 @@ export async function geocodeExact(address: string, query = defaultQuery): Promi
   return promise
 }
 
-export async function geocode (address: string, query = defaultQuery) {
-  let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(address)}&sensor=false`
-
-  try {
-    let response = await fetch(url)
-
-    let json = await response.json()
-    return graphql(
-      resolver,
-      query,
-      json
-    )
-  } catch (error) { return new Error(error) }
+export async function geocode (address: string, query = defaultQuery): Promise<GoogleResults> {
+  let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${ encodeURI(address) }&sensor=false`
+  let response = await fetch(url)
+  let json: GoogleResults = await response.json()
+  return graphql(
+    resolver,
+    query,
+    json
+  )
 }
