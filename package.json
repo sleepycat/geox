@@ -40,7 +40,10 @@
     "url": "https://github.com/sleepycat/geox/issues"
   },
   "homepage": "https://github.com/sleepycat/geox",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "babel": {
     "presets": [
       "stage-0",
