@@ -14,3 +14,11 @@ test('geocode graphql', async t => {
   const g: any = await geox.geocode('Ottawa, Canada', query)
   t.deepEqual('Ottawa, ON, Canada', g.results[0].addr)
 })
+
+test('geocode - no results', async t => {
+ geox.geocode('')
+  .then(
+    data => data,
+    error => t.deepEqual(error.message, 'Bad Request')
+  )
+})
