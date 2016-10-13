@@ -17,6 +17,7 @@
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
+    "@types/isomorphic-fetch": "0.0.31",
     "@types/node": "^6.0.45",
     "ava": "^0.16.0",
     "nyc": "^8.3.1",
