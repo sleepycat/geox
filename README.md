@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sleepycat/geox.svg?branch=master)](https://travis-ci.org/sleepycat/geox)
+
 # geox
 
 This is a little wrapper around the Google geocoding API. It assumes a global `fetch` function exists.
