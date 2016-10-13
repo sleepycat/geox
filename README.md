@@ -1,15 +1,23 @@
 # geox
 
 This is a little wrapper around the Google geocoding API. It assumes a global `fetch` function exists.
-Basic usage is exactly what you might expect:
+
+```sh
+npm install --save geox
+yarn add geox
+```
+
+Basic usage is exactly what you might expect.
 
 ```javascript
 > require('isomorphic-fetch')
-> geox = require('geox')
+> geox = require('geox').default
 > geox.geocode("200 Kent St, Ottawa").then((data) => console.log(JSON.stringify(data)))
 Promise { <pending> }
 > {"results":[{"formatted_address":"200 Kent St, Ottawa, ON K1R, Canada","geometry":{"location":{"lat":45.417127,"lng":-75.7015053}}}]}
 ```
+
+
 
 ### Why?
 
@@ -23,7 +31,7 @@ The default query returns `formatted_address` and the `lat` and `lng` values in 
 
 ```javascript
 > require('isomorphic-fetch')
-> geox = require('geox')
+> geox = require('geox').default
 > gql = require('graphql-tag')
 > geox.geocode("200 Kent St, Ottawa", gql`{results { formatted_address place_id}}`).then((data) => console.log(JSON.stringify(data)))
 > {"results":[{"formatted_address":"200 Kent St, Ottawa, ON K1R, Canada","place_id":"ChIJy4vDdFMEzkwRFZjfTeGZZeg"}]}
@@ -45,6 +53,21 @@ One of the nice things about Google's API is that it will tell you if the result
 > geox.geocodeExact("Ottawa", gql`{results { addr:formatted_address geom:geometry {location {lat} }}}`).then((data) => console.log(JSON.stringify(data))).catch(console.warn)
 Promise { <pending> }
 > Error: All results were approximate
+```
+
+### ES6 imports
+
+It's not always super obvious how to import things via the new ES6
+modules, so here is an example:
+
+```javascript
+//import fetch as a global
+import 'isomorphic-fetch'
+import gql from 'graphql-tag'
+
+import geox from 'geox'
+//or
+import { geocode } from 'geox'
 ```
 
 ## Contributing
