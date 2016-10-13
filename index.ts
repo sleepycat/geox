@@ -1,11 +1,10 @@
-/* global geocode geocodeExact fetch */
-/* exported geocode geocodeExact */
-
+import 'isomorphic-fetch'
 import gql from 'graphql-tag'
 import graphql from 'graphql-anywhere'
+import { GoogleResults } from './providers/google'
 
 // Define a resolver that just returns a property
-const resolver = (fieldName, root) => {
+const resolver = (fieldName: any, root: any) => {
   return root[fieldName]
 }
 
@@ -23,11 +22,12 @@ const defaultQuery = gql`
  }
 `
 
-export async function geocodeExact (address, query = defaultQuery) {
-  let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(address)}&sensor=false`
-  let response, json
+export async function geocodeExact(address: string, query = defaultQuery): Promise<GoogleResults> {
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${ encodeURI(address) }&sensor=false`
+  let response: any
+  let json: GoogleResults
 
-  let promise = new Promise(async function (resolve, reject) {
+  let promise: Promise<GoogleResults> = new Promise(async (resolve, reject) => {
     try {
       response = await fetch(url)
     } catch (error) {
@@ -35,9 +35,9 @@ export async function geocodeExact (address, query = defaultQuery) {
     }
 
     try {
-      json = await response.json()
+      json = response.json()
     } catch (error) {
-      reject(Error(`Failed to get json.`))
+      return reject(Error(`Failed to get json.`))
     }
 
     let preciseResults = json.results.filter((result) => {
@@ -48,18 +48,18 @@ export async function geocodeExact (address, query = defaultQuery) {
 
     if (preciseResults.length > 0) {
       try {
-        resolve(graphql(resolver, query, {results: preciseResults}))
+        return resolve(graphql(resolver, query, {results: preciseResults}))
       } catch (error) {
-        reject(Error(error))
+        return reject(Error(error))
       }
     } else {
-      reject(Error(`All results were approximate`))
+      return reject(Error(`All results were approximate`))
     }
   })
   return promise
 }
 
-export async function geocode (address, query = defaultQuery) {
+export async function geocode (address: string, query = defaultQuery) {
   let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(address)}&sensor=false`
 
   try {
@@ -71,9 +71,5 @@ export async function geocode (address, query = defaultQuery) {
       query,
       json
     )
-  } catch (error) {
-  }
+  } catch (error) { return new Error(error) }
 }
-
-let geox = { geocode, geocodeExact }
-export default geox
