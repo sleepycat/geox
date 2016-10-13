@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "keywords": [
-    "geocoding"
+    "geocoding",
+    "graphql"
   ],
   "author": "Mike Williamson <mike@korora.ca>",
   "license": "MIT",
