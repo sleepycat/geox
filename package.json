@@ -17,11 +17,13 @@
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
+    "@types/fetch-mock": "^5.0.5",
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.45",
     "fetch-mock": "^5.5.0",
     "mocha": "^3.1.2",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.3",
-    "typings": "^1.4.0"
+    "typescript": "^2.0.3"
   },
   "repository": {
     "type": "git",

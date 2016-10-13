@@ -2,7 +2,5 @@ dist/
 npm-debug.log
 node_modules/
 *.tgz
-typings/index.d.ts
-typings/globals
 *.js
 *.js.map
