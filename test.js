@@ -1,10 +1,12 @@
 import 'isomorphic-fetch'
 const fetchMock = require('fetch-mock')
 import { geocode, geocodeExact } from '../src/index'
-import { approximateResponse } from './data/google_approximate_response'
-import { exactResponse } from './data/google_exact_response'
+import * as approximateResponse from './data/google_approximate_response'
+import * as exactResponse from './data/google_exact_response'
 import gql from 'graphql-tag'
 import assert from 'assert'
+
+console.log(approximateResponse)
 
 describe('Geox', () => {
 
